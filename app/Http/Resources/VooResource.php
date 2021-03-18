@@ -28,8 +28,8 @@ class VooResource extends JsonResource
             "groups" => collect($this->grupos),
             "totalGroups" => $this->grupos->count(),
             "totalFlights" => count($this->resource),
-            "cheapestPrice" => $grupoMaisBarato['totalPrice'],
-            "cheapestGroup" => $grupoMaisBarato['uniqueId']
+            "cheapestPrice" => $grupoMaisBarato['totalPrice'] ?? 0,
+            "cheapestGroup" => $grupoMaisBarato['uniqueId'] ?? 0
         ];
     }
 }

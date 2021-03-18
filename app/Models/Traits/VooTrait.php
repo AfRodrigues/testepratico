@@ -32,10 +32,10 @@ trait VooTrait
         $gruposFormatados = [];
         $id = 1;
 
-
         foreach ($gruposPorTarifa as $key => $tarifa) {
-            foreach ($tarifa['ida'] as $precoIda => $grupoIda) {
-                foreach ($tarifa['volta'] as $precoVolta => $grupoVolta) {
+            foreach ($tarifa['ida'] ?? [] as $precoIda => $grupoIda) {
+                foreach ($tarifa['volta'] ?? [] as $precoVolta => $grupoVolta) {
+                    if (!empty($grupoIda) && !empty($grupoVolta))
                     $gruposFormatados[] = self::gerarGrupoFormatado($grupoIda, $precoIda, $grupoVolta, $precoVolta, $id++);
                 }
             }
