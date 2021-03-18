@@ -3,7 +3,7 @@
 - Projeto prático destinado a avaliação de conhecimentos. 
 
 ## API
-- Objetiva é consumir uma API da 123Milhas, aplicar as regras pré definidas e retornar os dados agrupados. 
+- Objetiva consumir dados da API fornecida pela 123Milhas, aplicar as regras pré definidas e retornar os dados agrupados. 
 
 ## Configurar
 
@@ -27,7 +27,7 @@ php artisan serve --port=8002
  - Agora acesse a url: 
  
  ``` 
- http://localhost:8001/api/v1/voos 
+ http://localhost:8002/api/v1/voos 
  ```
 
 
