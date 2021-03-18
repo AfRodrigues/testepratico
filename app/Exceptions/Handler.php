@@ -13,7 +13,7 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontReport = [
-        //
+        HttpException::class,
     ];
 
     /**
@@ -50,6 +50,10 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+
+        if ($exception instanceof \GuzzleHttp\Exception\ClientException) {
+            return response(["error" => true, "message" => $exception->getMessage()], 500);
+        }
         return parent::render($request, $exception);
     }
 }
